@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "6db75e5c-b376-45fd-a17b-ceb866d8cb6b",
+		"name": "EurekaServerCalls",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "InstanceChangeStatus",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9999/eureka/apps/appID/WKS-SOF-L001/status?value=UP",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"eureka",
+						"apps",
+						"appID",
+						"WKS-SOF-L001",
+						"status"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "UP"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetApps",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9999/eureka/apps/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"eureka",
+						"apps",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegisterApp",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"instance\": {\r\n        \"hostName\": \"WKS-SOF-L001\",\r\n        \"app\": \"appID\",\r\n        \"vipAddress\": \"appID\",\r\n        \"secureVipAddress\": \"appID\",\r\n        \"ipAddr\": \"10.0.0.10\",\r\n        \"status\": \"STARTING\",\r\n        \"port\": {\"$\": \"8080\", \"@enabled\": \"true\"},\r\n        \"securePort\": {\"$\": \"8443\", \"@enabled\": \"true\"},\r\n        \"healthCheckUrl\": \"http://WKS-SOF-L001:8080/healthcheck\",\r\n        \"statusPageUrl\": \"http://WKS-SOF-L001:8080/status\",\r\n        \"homePageUrl\": \"http://WKS-SOF-L001:8080\",\r\n        \"dataCenterInfo\": {\r\n            \"@class\": \"com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo\", \r\n            \"name\": \"MyOwn\"\r\n        }\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9999/eureka/apps/appID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"eureka",
+						"apps",
+						"appID"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
