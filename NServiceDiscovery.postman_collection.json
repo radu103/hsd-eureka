@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "e0e18a2c-5be3-4caf-8abe-6d13e4f4a46f",
+		"name": "NServiceDiscovery",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetApps",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44334/eureka/apps",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44334",
+					"path": [
+						"eureka",
+						"apps"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegisterApp_1_1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"instance\": {\r\n        \"hostName\": \"APPHOST11\",\r\n        \"app\": \"APPID_1\",\r\n        \"vipAddress\": \"APPHOST11\",\r\n        \"secureVipAddress\": \"APPHOST11\",\r\n        \"ipAddr\": \"10.0.0.10\",\r\n        \"status\": \"STARTING\",\r\n        \"port\": {\"$\": \"8080\", \"@enabled\": \"true\"},\r\n        \"securePort\": {\"$\": \"8443\", \"@enabled\": \"true\"},\r\n        \"healthCheckUrl\": \"http://APPHOST11:8080/healthcheck\",\r\n        \"statusPageUrl\": \"http://APPHOST11:8080/status\",\r\n        \"homePageUrl\": \"http://APPHOST11:8080\",\r\n        \"dataCenterInfo\": {\r\n            \"@class\": \"com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo\", \r\n            \"name\": \"MyOwn\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44334/eureka/apps/APPID_1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44334",
+					"path": [
+						"eureka",
+						"apps",
+						"APPID_1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
