@@ -1,17 +1,17 @@
 {
 	"info": {
-		"_postman_id": "6db75e5c-b376-45fd-a17b-ceb866d8cb6b",
+		"_postman_id": "97146bfc-bd46-4393-93bc-87672458e796",
 		"name": "EurekaServerCalls",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "InstanceChangeStatus",
+			"name": "InstanceChangeStatus_1_1",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:9999/eureka/apps/appID/WKS-SOF-L001/status?value=UP",
+					"raw": "http://localhost:9999/eureka/apps/APPID_1/APPHOST11/status?value=UP",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -20,14 +20,101 @@
 					"path": [
 						"eureka",
 						"apps",
-						"appID",
-						"WKS-SOF-L001",
+						"APPID_1",
+						"APPHOST11",
 						"status"
 					],
 					"query": [
 						{
 							"key": "value",
 							"value": "UP"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InstanceChangeStatus_1_2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9999/eureka/apps/APPID_1/APPHOST12/status?value=UP",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"eureka",
+						"apps",
+						"APPID_1",
+						"APPHOST12",
+						"status"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "UP"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InstanceChangeStatus_2_1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9999/eureka/apps/APPID_2/APPHOST21/status?value=UP",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"eureka",
+						"apps",
+						"APPID_2",
+						"APPHOST21",
+						"status"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "UP"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "InstanceChangeStatus_3_1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9999/eureka/apps/APPID_3/APPHOST31/status?value=DOWN",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"eureka",
+						"apps",
+						"APPID_3",
+						"APPHOST31",
+						"status"
+					],
+					"query": [
+						{
+							"key": "value",
+							"value": "DOWN"
 						}
 					]
 				}
@@ -62,7 +149,7 @@
 			"response": []
 		},
 		{
-			"name": "RegisterApp",
+			"name": "RegisterApp_1_1",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -74,10 +161,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"instance\": {\r\n        \"hostName\": \"WKS-SOF-L001\",\r\n        \"app\": \"appID\",\r\n        \"vipAddress\": \"appID\",\r\n        \"secureVipAddress\": \"appID\",\r\n        \"ipAddr\": \"10.0.0.10\",\r\n        \"status\": \"STARTING\",\r\n        \"port\": {\"$\": \"8080\", \"@enabled\": \"true\"},\r\n        \"securePort\": {\"$\": \"8443\", \"@enabled\": \"true\"},\r\n        \"healthCheckUrl\": \"http://WKS-SOF-L001:8080/healthcheck\",\r\n        \"statusPageUrl\": \"http://WKS-SOF-L001:8080/status\",\r\n        \"homePageUrl\": \"http://WKS-SOF-L001:8080\",\r\n        \"dataCenterInfo\": {\r\n            \"@class\": \"com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo\", \r\n            \"name\": \"MyOwn\"\r\n        }\r\n    }\r\n}"
+					"raw": "{\r\n    \"instance\": {\r\n        \"hostName\": \"APPHOST11\",\r\n        \"app\": \"APPID_1\",\r\n        \"vipAddress\": \"APPHOST11\",\r\n        \"secureVipAddress\": \"APPHOST11\",\r\n        \"ipAddr\": \"10.0.0.10\",\r\n        \"status\": \"STARTING\",\r\n        \"port\": {\"$\": \"8080\", \"@enabled\": \"true\"},\r\n        \"securePort\": {\"$\": \"8443\", \"@enabled\": \"true\"},\r\n        \"healthCheckUrl\": \"http://APPHOST11:8080/healthcheck\",\r\n        \"statusPageUrl\": \"http://APPHOST11:8080/status\",\r\n        \"homePageUrl\": \"http://APPHOST11:8080\",\r\n        \"dataCenterInfo\": {\r\n            \"@class\": \"com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo\", \r\n            \"name\": \"MyOwn\"\r\n        }\r\n    }\r\n}"
 				},
 				"url": {
-					"raw": "http://localhost:9999/eureka/apps/appID",
+					"raw": "http://localhost:9999/eureka/apps/APPID_1",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -86,7 +173,100 @@
 					"path": [
 						"eureka",
 						"apps",
-						"appID"
+						"APPID_1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegisterApp_3_1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"instance\": {\r\n        \"hostName\": \"APPHOST31\",\r\n        \"app\": \"APPID_3\",\r\n        \"vipAddress\": \"APPHOST31\",\r\n        \"secureVipAddress\": \"APPHOST31\",\r\n        \"ipAddr\": \"10.0.0.30\",\r\n        \"status\": \"STARTING\",\r\n        \"port\": {\"$\": \"8080\", \"@enabled\": \"true\"},\r\n        \"securePort\": {\"$\": \"8443\", \"@enabled\": \"true\"},\r\n        \"healthCheckUrl\": \"http://APPHOST31:8080/healthcheck\",\r\n        \"statusPageUrl\": \"http://APPHOST31:8080/status\",\r\n        \"homePageUrl\": \"http://APPHOST31:8080\",\r\n        \"dataCenterInfo\": {\r\n            \"@class\": \"com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo\", \r\n            \"name\": \"MyOwn\"\r\n        }\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9999/eureka/apps/APPID_3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"eureka",
+						"apps",
+						"APPID_3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegisterApp_1_2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"instance\": {\r\n        \"hostName\": \"APPHOST12\",\r\n        \"app\": \"APPID_1\",\r\n        \"vipAddress\": \"APPHOST12\",\r\n        \"secureVipAddress\": \"APPHOST12\",\r\n        \"ipAddr\": \"10.0.0.11\",\r\n        \"status\": \"STARTING\",\r\n        \"port\": {\"$\": \"8080\", \"@enabled\": \"true\"},\r\n        \"securePort\": {\"$\": \"8443\", \"@enabled\": \"true\"},\r\n        \"healthCheckUrl\": \"http://APPHOST12:8080/healthcheck\",\r\n        \"statusPageUrl\": \"http://APPHOST12:8080/status\",\r\n        \"homePageUrl\": \"http://APPHOST12:8080\",\r\n        \"dataCenterInfo\": {\r\n            \"@class\": \"com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo\", \r\n            \"name\": \"MyOwn\"\r\n        }\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9999/eureka/apps/APPID_1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"eureka",
+						"apps",
+						"APPID_1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RegisterApp_2_1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"instance\": {\r\n        \"hostName\": \"APPHOST21\",\r\n        \"app\": \"APPID_2\",\r\n        \"vipAddress\": \"APPHOST21\",\r\n        \"secureVipAddress\": \"APPHOST21\",\r\n        \"ipAddr\": \"10.0.0.20\",\r\n        \"status\": \"STARTING\",\r\n        \"port\": {\"$\": \"8080\", \"@enabled\": \"true\"},\r\n        \"securePort\": {\"$\": \"8443\", \"@enabled\": \"true\"},\r\n        \"healthCheckUrl\": \"http://APPHOST21:8080/healthcheck\",\r\n        \"statusPageUrl\": \"http://APPHOST21:8080/status\",\r\n        \"homePageUrl\": \"http://APPHOST21:8080\",\r\n        \"dataCenterInfo\": {\r\n            \"@class\": \"com.netflix.appinfo.InstanceInfo$DefaultDataCenterInfo\", \r\n            \"name\": \"MyOwn\"\r\n        }\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:9999/eureka/apps/APPID_2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9999",
+					"path": [
+						"eureka",
+						"apps",
+						"APPID_2"
 					]
 				}
 			},
